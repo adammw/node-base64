@@ -16,7 +16,7 @@ VException(const char *msg) {
 static const char base64_chars[] = 
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     "abcdefghijklmnopqrstuvwxyz"
-    "0123456789+/";
+    "0123456789-_";
 
 static char *
 base64_encode(const unsigned char *input, int length)
@@ -54,8 +54,8 @@ base64_encode(const unsigned char *input, int length)
         for (j = 0; j < i + 1; j++)
             b64str[s++] = base64_chars[char_array_4[j]];
 
-        while (i++ < 3)
-            b64str[s++] = '=';
+        //while (i++ < 3)
+        //    b64str[s++] = '=';
     }
     b64str[b64len] = '\0';
 
@@ -63,7 +63,7 @@ base64_encode(const unsigned char *input, int length)
 }
 
 static inline bool is_base64(unsigned char c) {
-    return (isalnum(c) || (c == '+') || (c == '/'));
+    return (isalnum(c) || (c == '-') || (c == '_'));
 }
 
 static unsigned char *
