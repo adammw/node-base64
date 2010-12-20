@@ -1,7 +1,7 @@
 {
-   "name": "base64",
+   "name": "base64url",
    "version": "1.0.1",
-   "main": "base64",
+   "main": "base64url",
    "description": "A C++ module for node-js that does base64 encoding and decoding.",
    "keywords": [
        "base conversion",
